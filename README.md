@@ -1,87 +1,331 @@
-# AI Resume Job Matcher
 
-AI Resume Job Matcher is a Python-based application that compares a resume with a job description and calculates how well the candidate's skills match the job requirements. The project includes both a command-line version and a Streamlit web application for easier interaction.
 
----
+* * * * *
 
-## Features
+AI Resume Job Matcher
+=====================
 
-- Extracts skills from resume and job description text
-- Calculates match percentage using similarity scoring
-- Identifies missing skills
-- Web-based interface using Streamlit
-- Simple and beginner-friendly AI project
+AI Resume Job Matcher is a Python-based NLP application that analyzes a candidate's resume against a job description and calculates how well the candidate matches the job requirements.
 
----
+The project includes:
 
-## Technologies Used
+-   A command-line implementation
 
-- Python 3
-- Streamlit
-- spaCy
-- scikit-learn
+-   A Streamlit-based web application
 
----
+-   NLP-powered similarity scoring
 
-## Installation
+-   Skill gap identification
 
-1. Clone the repository:
+This project demonstrates practical Natural Language Processing (NLP) and text similarity techniques in a real-world recruitment scenario.
 
+* * * * *
+
+ Project Overview
+-------------------
+
+Recruiters and applicants often manually compare resumes with job descriptions. This tool automates that comparison using NLP techniques.
+
+The system:
+
+1.  Extracts relevant skills and keywords
+
+2.  Processes text using NLP
+
+3.  Computes similarity score
+
+4.  Identifies missing skills
+
+5.  Displays a structured match analysis
+
+The goal is to provide a simple AI-driven decision-support tool for resume optimization.
+
+* * * * *
+
+ Core Functionalities
+-----------------------
+
+###  Resume & Job Description Analysis
+
+-   Accepts resume text input
+
+-   Accepts job description text input
+
+-   Cleans and preprocesses both texts
+
+###  Skill Extraction
+
+-   Extracts relevant keywords
+
+-   Removes stopwords
+
+-   Normalizes text for comparison
+
+-   Uses NLP tokenization
+
+###  Similarity Scoring
+
+-   Uses vectorization techniques
+
+-   Computes cosine similarity score
+
+-   Outputs match percentage
+
+###  Missing Skill Identification
+
+-   Identifies keywords present in job description but missing in resume
+
+-   Helps candidate understand skill gaps
+
+###  Streamlit Web Interface
+
+-   Clean and simple UI
+
+-   Text input areas for resume and job description
+
+-   Displays:
+
+    -   Match percentage
+
+    -   Extracted skills
+
+    -   Missing skills
+
+    -   Overall analysis
+
+* * * * *
+
+ Tech Stack
+-------------
+
+### Programming Language
+
+-   Python 3.x
+
+* * * * *
+
+### NLP & ML Libraries
+
+####  spaCy
+
+-   Used for text preprocessing
+
+-   Tokenization
+
+-   Stopword removal
+
+-   Linguistic normalization
+
+####  scikit-learn
+
+-   TF-IDF Vectorization
+
+-   Cosine similarity scoring
+
+-   Converts text into numerical feature vectors
+
+* * * * *
+
+### Web Framework
+
+####  Streamlit
+
+-   Builds the interactive web interface
+
+-   Allows real-time user input
+
+-   Displays match results dynamically
+
+* * * * *
+
+ How It Works (Architecture)
+------------------------------
+
+```
+Resume Text Input
+          ↓
+Job Description Input
+          ↓
+Text Preprocessing (spaCy)
+          ↓
+TF-IDF Vectorization
+          ↓
+Cosine Similarity Calculation
+          ↓
+Match Percentage Output
+          ↓
+Missing Skills Identification
+          ↓
+Streamlit UI Display
+
+```
+
+* * * * *
+
+ Project Structure
+--------------------
+
+```
+Resume_analyzer/
+│
+├── app.py                  # Streamlit web application
+├── Resume_job_matcher.py   # Core logic for text processing & scoring
+├── requirements.txt        
+└── README.md
+
+```
+
+* * * * *
+
+ Installation & Setup
+-----------------------
+
+###  Clone the Repository
+
+```
 git clone https://github.com/Anjana-S-V/ai-resume-job-matcher.git
-
-
-2. Navigate to the project folder:
-
 cd Resume_analyzer
 
+```
 
-3. Install dependencies:
+* * * * *
 
+###  Install Dependencies
+
+```
 pip install -r requirements.txt
 
+```
 
----
+If using spaCy model:
 
-## Usage
+```
+python -m spacy download en_core_web_sm
+
+```
+
+* * * * *
+
+ Usage
+--------
 
 ### Run the Streamlit Web App
 
+```
 streamlit run app.py
 
+```
 
-Open the browser link shown in the terminal (usually http://localhost:8501).
+Open the browser link shown in the terminal\
+(Usually: [http://localhost:8501](http://localhost:8501/))
 
----
+* * * * *
 
-## Project Structure
+ Important Notes
+------------------
 
-Resume_analyzer
-- app.py
-- Resume_job_matcher.py
-- requirements.txt
-- README.md
+-   Do NOT run using:
 
+```
+python app.py
 
----
+```
 
-## Notes
+-   Always run with:
 
-- Do not run `app.py` using `python app.py`
-- Always use `streamlit run app.py` to avoid runtime warnings
-- Ensure Streamlit is installed before running the app
+```
+streamlit run app.py
 
----
+```
 
-## Future Enhancements
+-   Ensure Streamlit and spaCy model are installed before execution
 
-- Resume PDF upload support
-- Skill weighting based on job importance
-- Online deployment using Streamlit Cloud
-- Resume improvement suggestions
+* * * * *
 
----
+ Output Example
+-----------------
 
-## Author
+The application displays:
 
-Anjana S V  
-GitHub: https://github.com/Anjana-S-V
+-   Match Percentage (e.g., 78%)
+
+-   Extracted Resume Skills
+
+-   Extracted Job Skills
+
+-   Missing Skills
+
+-   Overall Fit Assessment
+
+* * * * *
+
+ Privacy & Cost
+-----------------
+
+-   100% local execution
+
+-   No cloud APIs
+
+-   No external data storage
+
+-   Free and open-source libraries only
+
+* * * * *
+
+  Learning Outcomes
+--------------------
+
+Through this project:
+
+-   Implemented NLP preprocessing using spaCy
+
+-   Applied TF-IDF vectorization
+
+-   Used cosine similarity for text comparison
+
+-   Built a real-world AI use case
+
+-   Developed interactive web UI using Streamlit
+
+-   Practiced modular Python project structure
+
+* * * * *
+
+ Future Enhancements
+----------------------
+
+-   PDF resume upload support
+
+-   Automatic resume parsing
+
+-   Skill weighting based on job priority
+
+-   Resume improvement suggestions
+
+-   Deployment via Streamlit Cloud
+
+-   Dashboard-style analytics view
+
+* * * * *
+
+ Use Cases
+------------
+
+-   Students optimizing resumes
+
+-   Job applicants tailoring resumes
+
+-   HR screening assistance
+
+-   NLP educational projects
+
+-   Beginner-friendly AI demonstration
+
+* * * * *
+
+ Author
+------------
+
+Anjana S V\
+GitHub: <https://github.com/Anjana-S-V>
+
